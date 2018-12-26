@@ -1,0 +1,58 @@
+sample = [
+  {term_date: "2018-12-05", mid: "123", currency:"USD", amount:"3.99", tx_date: "2018-12-03" },
+  {term_date: "2018-12-05", mid: "123", currency:"USD", amount:"2.99", tx_date: "2018-12-03" },
+  {term_date: "2018-12-05", mid: "321", currency:"USD", amount:"1.99", tx_date: "2018-12-03" },
+  {term_date: "2018-12-05", mid: "321", currency:"USD", amount:"3.99", tx_date: "2018-12-03" },
+  {term_date: "2018-12-06", mid: "123", currency:"USD", amount:"2.99", tx_date: "2018-12-04" },
+  {term_date: "2018-12-06", mid: "123", currency:"USD", amount:"1.99", tx_date: "2018-12-04" },
+  {term_date: "2018-12-06", mid: "321", currency:"USD", amount:"3.99", tx_date: "2018-12-04" },
+  {term_date: "2018-12-06", mid: "321", currency:"USD", amount:"1.99", tx_date: "2018-12-04" },
+
+  {term_date: "2018-12-05", mid: "123", currency:"SGD", amount:"2.99", tx_date: "2018-12-03" },
+  {term_date: "2018-12-05", mid: "123", currency:"SGD", amount:"3.99", tx_date: "2018-12-03" },
+  {term_date: "2018-12-05", mid: "321", currency:"SGD", amount:"2.99", tx_date: "2018-12-03" },
+  {term_date: "2018-12-05", mid: "321", currency:"SGD", amount:"1.99", tx_date: "2018-12-03" },
+  {term_date: "2018-12-06", mid: "123", currency:"SGD", amount:"3.99", tx_date: "2018-12-04" },
+  {term_date: "2018-12-06", mid: "123", currency:"SGD", amount:"1.99", tx_date: "2018-12-04" },
+  {term_date: "2018-12-06", mid: "321", currency:"SGD", amount:"2.99", tx_date: "2018-12-04" },
+  {term_date: "2018-12-06", mid: "321", currency:"SGD", amount:"3.99", tx_date: "2018-12-04" },
+]
+
+result = [    //Group by Currency, then by date, then by ID
+  {
+    currency: "USD",
+    term_dates: [
+      {
+        date: "2018-12-05"
+        accounts: [
+          {
+            mid: "123",
+            tx: [
+              {
+                tx_date: "2018-12-03",
+                amount: "3.99"
+              },
+              {
+                tx_date: "2018-12-03",
+                amount: "2.99"
+              }
+            ]
+          },
+          {
+            mid: "321",
+            tx: [
+              {
+                tx_date: "2018-12-03",
+                amount: "3.99"
+              },
+              {
+                tx_date: "2018-12-03",
+                amount: "2.99"
+              }
+            ]
+          }
+        ]
+      } 
+    ]
+  }
+]
